@@ -16,7 +16,7 @@ hold_cache = TTLCache(maxsize=100, ttl=60 * 60 * 24)
 
 
 @router.post(
-    "/hold/",
+    "/",
     description="Create Hold",
     status_code=status.HTTP_200_OK,
 )

@@ -11,7 +11,7 @@ from app.schemas import BookRequest, GenericApiResponseWrapper
 router = APIRouter()
 
 
-@router.post("/book/", description="Book", status_code=status.HTTP_200_OK)
+@router.post("/", description="Book", status_code=status.HTTP_200_OK)
 async def book(payload: BookRequest, db: Session = Depends(get_db)):
     hold = (
         db.query(Hold)
