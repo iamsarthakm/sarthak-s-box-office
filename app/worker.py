@@ -19,7 +19,7 @@ async def release_expired_holds_worker():
             # Release seats back to event
             event = db.query(Event).filter(Event.id == hold.event_id).first()
             if event:
-                event.seats += hold.seats
+                event.seats += hold.seats_held
 
             # Delete the expired hold
             db.delete(hold)
